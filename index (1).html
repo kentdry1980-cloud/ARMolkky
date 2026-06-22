@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARサイズチェッカー</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    <style>
+        body { margin: 0; background-color: #f0f0f0; }
+        model-viewer { width: 100vw; height: 100vh; }
+        #ar-button {
+            position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+            padding: 16px 32px; background-color: #007bff; color: white;
+            border: none; border-radius: 25px; font-size: 16px; font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <model-viewer 
+        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+        ar 
+        ar-modes="scene-viewer" 
+        camera-controls 
+        touch-action="none" 
+        alt="3Dモデル">
+        
+        <button slot="ar-button" id="ar-button">
+            📦 目の前に設置する (AR)
+        </button>
+    </model-viewer>
+
+</body>
+</html>
